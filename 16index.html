@@ -1,0 +1,22 @@
+<script>
+    let arr = [2, 2, 4]
+    function cubeOdd(arr) {
+        let sum = 0
+arr = arr.map((value)=>{
+    return Math.pow(value, 3);
+})
+for(let i of arr){
+  if(typeof(i) !== 'number' || typeof(i) == 'NaN' ){
+    return undefined
+  }
+  else if(i%2 !== 0){
+sum +=i
+  }
+}
+return sum;
+}
+
+console.log(cubeOdd(arr))
+
+
+</script>

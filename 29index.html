@@ -1,0 +1,19 @@
+<script>
+    let str = 'moOse'
+    function isIsogram(str){
+        str.toLowerCase()
+        let arr = [...str]
+        let item
+        for(let i = 0; i<=arr.length; i++){
+            item = arr.splice(i, 1)
+            for(let a of arr){
+                if(a===item){
+                    return false
+                }
+            }
+        }
+       
+       
+}
+console.log(isIsogram(str))
+</script>

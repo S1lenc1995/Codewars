@@ -1,19 +1,28 @@
 <script>
-    let str = 'moOse'
+
+/* An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+Example: (Input --> Output)
+
+"Dermatoglyphics" --> true "aba" --> false "moOse" --> false (ignore letter case) */
+
+    let str = 'asvzz'
     function isIsogram(str){
-        str.toLowerCase()
+        str = str.toLowerCase()
         let arr = [...str]
-        let item
-        for(let i = 0; i<=arr.length; i++){
-            item = arr.splice(i, 1)
-            for(let a of arr){
-                if(a===item){
-                    return false
-                }
+        let result
+        let count = 0;
+       while(count<=str.length){
+            let elem = arr.splice(1, 1).join();
+            if(arr.includes(elem)){
+                result = false
+                break
+            } else{
+                result = true
             }
+            count++
         }
-       
-       
+        return result 
 }
 console.log(isIsogram(str))
 </script>

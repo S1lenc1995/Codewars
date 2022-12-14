@@ -1,0 +1,28 @@
+<script>
+ let aaa ="mondaY 9:58"
+ let bbb = aaa.split(' ')
+ let word = bbb[0].toLocaleLowerCase()
+ let qqq = bbb[1].split(':')
+console.log(bbb) 
+let NowTime = new Date
+ NowTime.setHours(qqq[0],qqq[1])
+
+let openWorkDay = new Date 
+openWorkDay.setHours(8)
+
+let closeWorkDay = new Date
+openWorkDay.setHours(20)
+
+
+ let weekDays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sinday']
+
+
+    if(weekDays.includes(word) &&  NowTime < openWorkDay){
+        console.log("Library opens: today 8:00")
+    }
+    if(weekDays.includes(word) &&  NowTime > closeWorkDay){
+        console.log(`Library opens: ${weekDays[weekDays.indexOf(word) + 1].charAt(0).toUpperCase() + weekDays[weekDays.indexOf(word) + 1].slice(1) } 8:00`)
+    }
+
+
+</script>

@@ -1,0 +1,65 @@
+<script>
+    let timestring = "09:10:01"
+    
+
+    function timeCorrect(timestring) {
+        console.log('aaaaaaaaaaaaaa')
+        if(timestring === ''){
+            console.log('as')
+            return ''
+        }
+        if(timestring === null){
+            console.log('as')
+            return null
+        }
+
+
+        let tryeItems = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':' ]
+
+        let a = timestring.split('')
+        
+
+        if(!a.includes(':') || a.length !== 8 ){
+            console.log(1)
+            return null
+        } 
+
+        
+        console.log('bbbbbbbbbbbb')
+       
+        
+        let s = timestring.split(':')
+        
+       let arr = s.map((el)=>{
+        console.log(1)
+            return Number(el)
+        })
+        if(arr[2]>= 60){
+            arr[2] = arr[2] - 60
+      /*       if(arr[2]<10){
+                arr[2] = '0' +  arr[2]
+            } */
+            arr[1] = arr[1] + 1
+        }
+        if(arr[1]>= 60){
+            arr[1] = arr[1] - 60
+            arr[0] = arr[0] + 1
+        }
+        while(arr[0]>= 24){
+            arr[0] = arr[0] - 24 
+        }
+
+       return `${arr[0]}:${arr[1]}:${arr[2]}` 
+
+
+        
+       
+
+        
+       
+
+}
+
+timeCorrect("09:10:01")
+
+</script>

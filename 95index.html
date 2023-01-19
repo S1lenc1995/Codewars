@@ -1,0 +1,30 @@
+<script>
+
+function doors(n){
+  let arr = []
+  for(let i = 1; i<=n; i++){
+    arr.push(true)
+  }
+  arr.unshift('.')
+  for(let i = 2; i<=n; i++){
+    for(let a = 1; a<=n; a++ ){
+      if(a%i == 0){
+        arr[a] = !arr[a]
+      }
+    }  
+  }
+  
+  let openDoor = 0
+  arr.forEach((el)=>{
+    if(el == true){
+      openDoor++
+    }
+  })
+  
+
+  
+  return openDoor
+}
+
+console.log(doors(100))
+</script>

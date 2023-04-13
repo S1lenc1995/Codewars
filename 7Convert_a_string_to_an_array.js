@@ -1,4 +1,4 @@
-<script>
+
 /* Write a function to split a string and convert it into an array of words.
 
 Examples (Input ==> Output):
@@ -18,5 +18,3 @@ let arr = str.split(' ');
 } 
 
 console.log(stringToArray(str))
-
-</script>
